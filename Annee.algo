@@ -1,0 +1,32 @@
+ALGORITHM Annee
+VAR
+    Year,Month,Day,date : INTEGER
+    MonthS : STRING
+BEGIN
+      
+    Year := date mod 100
+    Day := date div 10000
+    Month := (date mod 10000) div 100
+
+    IF (Day>31 OR Day = 0 OR Month>12 OR Month = 0) THEN
+        Write("Error")
+    ELSE_IF (Month = 2 AND Year mod 4 = 0 AND Day > 29) THEN
+        Write("Error")
+    ELSE_IF (Month = 2 AND Year mod 4 <> 0 AND Day >28) THEN
+        Write("Error")
+    ELSE_IF((Month = 4 OR Month = 6 OR Month = 9 OR Month = 11) AND Day>30)
+        Write("Error")
+    ELSE
+        SWITCH (Month) DO
+            case 1 : MonthS := "Janvier"
+            case 12 : MonthS := "December"
+            default : MonthS := "Error"
+        END_SWITCH
+
+        Write("Day :",Day)
+        Write("Month :",MonthS)
+        Write("Year :",Year)
+
+    END_IF
+
+END

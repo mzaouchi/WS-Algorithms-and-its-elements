@@ -1,0 +1,21 @@
+ALGORITHM Permutation
+VAR
+    x,y,z,aux : INTEGER
+
+BEGIN
+    Write("Entrez x")
+    Read(x)
+    Write("Entrez y")
+    Read(y)
+    Write("Entrez z")
+    Read(z)
+
+    aux := x
+    x := y
+    y := z
+    z := aux
+
+    Write("La valeur de x est :",x)
+    Write("La valeur de y est :",y)
+    Write("La valeur de z est :",z)
+END

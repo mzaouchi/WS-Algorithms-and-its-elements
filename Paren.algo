@@ -1,0 +1,28 @@
+ALGORITHM Paren
+VAR
+    c : CHAR
+    compteur : INTEGER
+BEGIN
+
+    compteur := 0
+    
+    REPEAT
+    Write("Donner un charactere")
+    Read(c)
+
+    IF (c = "(") THEN
+        compteur = compteur + 1
+    END_IF
+
+    IF (c = ")") THEN
+        compteur = compteur - 1
+    END_IF
+
+    UNTIL (c = "#" OR compteur <0)
+
+    IF (compteur = 0) THEN
+        Write("Valid")
+    ELSE
+        Write("Invalid")
+    END_IF
+END
